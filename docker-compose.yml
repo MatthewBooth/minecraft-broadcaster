@@ -1,0 +1,11 @@
+services:
+  broadcaster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Minecraft-Broadcaster
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      BROADCASTS: "${BROADCASTS}"
+      BROADCAST_INTERVAL_SECONDS: "${BROADCAST_INTERVAL_SECONDS}"
